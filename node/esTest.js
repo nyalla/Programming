@@ -57,7 +57,7 @@ module.exports = {
               {
                 "term": {
                   "deviceName.normalize": {
-                    "value": "/subscriptions/be378aa8-a29c-4fcc-a8d0-814b219202c2/resourcegroups/diva-portal/providers/microsoft.compute/virtualmachines/inspire-test-vm5"
+                    "value": "valuName"
                   }
                 }
               },
