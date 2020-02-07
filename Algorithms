@@ -1,12 +1,12 @@
 
-Get alternative number from a number:
+1.Get alternative number from a number:
 Input: 1234567
 Output: 246
 
 *****
     public static void main(String args[]){
         int base=14235478;
-        int[] holder= new int[8];
+        int[] holder= new int[Integer.toString(base).length()];
         int i=0;
         //int count=1;
         while(base>0){
