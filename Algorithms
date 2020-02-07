@@ -1,0 +1,30 @@
+
+Get alternative number from a number:
+Input: 1234567
+Output: 246
+
+*****
+    public static void main(String args[]){
+        int base=14235478;
+        int[] holder= new int[8];
+        int i=0;
+        //int count=1;
+        while(base>0){
+            int rem = base%10;
+            int newBase = base/10;
+            base=newBase;
+            holder[i++]=rem;
+        }
+        System.out.print(holder);
+        int count=1;
+        int k=0;
+        int[] finalArr= new int[10];
+        for(int j=holder.length-1;j>=0;j--){
+            if (count%2==0)
+                finalArr[k++]=holder[j];
+            count++;
+        }
+        System.out.print(finalArr);
+
+    }
+*******    
