@@ -25,7 +25,7 @@ public class XMParser
         book.setName(xmlName);
         book.setAuthor("Author1");
         book.setDate(new Date());
-
+        System.out.println("added log");
         JAXBContext context = JAXBContext.newInstance(Book.class);
         Marshaller mar = context.createMarshaller();
         mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
