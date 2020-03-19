@@ -6,14 +6,7 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Date;
 
-/**
- * TODO Add In Class Summary
- * <p>
- * TODO Add In Class Description
- *
- * @author 11201435 <br />
- * Copyright 2020 Earthport Plc. All rights reserved.
- */
+
 @XmlRootElement(name = "book")
 @XmlType(propOrder = { "id", "name", "date" })
 public class Book {

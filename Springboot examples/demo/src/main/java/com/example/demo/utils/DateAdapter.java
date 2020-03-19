@@ -5,14 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * TODO Add In Class Summary
- * <p>
- * TODO Add In Class Description
- *
- * @author 11201435 <br />
- * Copyright 2020 Earthport Plc. All rights reserved.
- */
+
 public class DateAdapter extends XmlAdapter<String, Date>
 {
 

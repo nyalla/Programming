@@ -20,14 +20,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import javax.sql.DataSource;
 
-/**
- * TODO Add In Class Summary
- * <p>
- * TODO Add In Class Description
- *
- * @author 11201435 <br />
- * Copyright 2020 Earthport Plc. All rights reserved.
- */
+
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration

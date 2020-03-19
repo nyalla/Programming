@@ -11,14 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Date;
 
-/**
- * TODO Add In Class Summary
- * <p>
- * TODO Add In Class Description
- *
- * @author 11201435 <br />
- * Copyright 2020 Earthport Plc. All rights reserved.
- */
+
 @Component
 public class XMParser
 {
