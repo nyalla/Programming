@@ -1,72 +1,83 @@
 package com.example.demo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class SampleTest
 {
-    public static void main(String args[])
-    {
-    /*    int base = 670;
-//outcomes  - 5268,2568,2658,2685
-// 670      - 5670,6570,6750,6705
-        String numSt = "";
-        int SIZE = 0;
-        while (base > 0)
-        {
-            numSt = numSt + base % 10;
-            base = base / 10;
-            ++SIZE;
-        }
-
-        int MAX_VALUE = 0;
-        int POINT = numSt.length() - 1;
-        int POSSIBILITIES = SIZE + 1;
-        String NEW_VALUE = "";
-        while (POSSIBILITIES > 0)
-        {
-            for (int i = numSt.length() - 1; i >= 0; i--)
-            {
-                if (i == POINT)
-                    NEW_VALUE = NEW_VALUE + "5";
-                NEW_VALUE = NEW_VALUE + numSt.charAt(i);
+    // Complete the birthdayCakeCandles function below.
+    //Get ax element from the array and check how many times it repeated in the same array:
+    static int birthdayCakeCandles(int[] ar) {
+        int max=0;
+        int count=0;
+        for(int i=0;i<ar.length;i++){
+            if(ar[i]>max){
+                max=ar[i];
             }
-            if (Integer.parseInt(NEW_VALUE) > MAX_VALUE)
-                MAX_VALUE = Integer.parseInt(NEW_VALUE);
-            POSSIBILITIES--;
-            NEW_VALUE = "";
-            POINT--;
         }
-        System.out.println(MAX_VALUE);
-*/
-
-
-
-        List<String> li1 = new ArrayList<>();
-        li1.add("epjack");
-        li1.add("epkate");
-        li1.add("jack");
-        li1.add("kate");
-        li1.add("epsawyer");
-
-        Optional<String> val = li1.stream().filter(i -> i.startsWith("ep")).findFirst();
-        String st = val.isPresent() ? val.get() : "NO";
-        System.out.println(st);
-    Object a="";
-        String val1=null;
-        for(String i : li1){
-            if(String.valueOf(a).startsWith("ep"))
-                val1=i;
-            break;
+        for(int i=0;i<ar.length;i++){
+            if(ar[i]==max){
+                count++;
+            }
         }
-        //Boolean st = val.isPresent() ? true : false;
-        if(val1!=null){
-           // return true;
-        }else{
-           // return false;
+        return count;
+
+    }
+
+    static String timeConversion(String str) {
+
+        String op="";
+        // Get hours
+        int h1 = (int)str.charAt(1) - '0';
+        int h2 = (int)str.charAt(0) - '0';
+        int hh = (h2 * 10 + h1 % 10);
+
+        // If time is in "AM"
+        if (str.charAt(8) == 'A')
+        {
+            if (hh == 12)
+            {
+                op+="00";
+                for (int i = 2; i <= 7; i++)
+                    op+=str.charAt(i);
+            }
+            else
+            {
+                for (int i = 0; i <= 7; i++)
+                    op+=str.charAt(i);
+            }
         }
 
+        // If time is in "PM"
+        else
+        {
+            if (hh == 12)
+            {
+                op+="12";
+                for (int i = 2; i <= 7; i++)
+                    op+=str.charAt(i);
+            }
+            else
+            {
+                hh = hh + 12;
+                op+=hh;
+                for (int i = 2; i <= 7; i++)
+                    op+=str.charAt(i);
+            }
+        }
+        return op;
+    }
+
+
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+        // Write your code here
+        List<Integer>  newGrades = new ArrayList<>();
+        for(Integer grade : grades){
+            if (grade<40){
+                newGrades.add(grade);
+            }
+            
+        }
+        return newGrades;
     }
 }
