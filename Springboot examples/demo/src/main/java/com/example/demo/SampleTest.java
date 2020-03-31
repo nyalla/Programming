@@ -302,15 +302,6 @@ Two different numbers n1 and n2 are divisible by k if and only if:
         return numOfElementsInSubset;
     }
 
-
-    public static void main(String args[])
-    {
-        int[] cuts = new int[0];
-        //List<Integer> sss = new ArrayList<>();
-        repeatedString("", 1);
-    }
-
-
     // Complete the repeatedString function below.
     static long repeatedString(String s, long n)
     {
@@ -373,11 +364,37 @@ Two different numbers n1 and n2 are divisible by k if and only if:
 
     }
 
-    // Complete the jumpingOnClouds function below.
-    static int jumpingOnClouds(int[] c)
+    public static void main(String args[])
     {
-
-        return 1;
+        int[] cuts = new int[0];
+        //List<Integer> sss = new ArrayList<>();
+        //char[] c = new char[] {'0', '0', '1', '0', '0', '1', '0'};
+        char[] c = new char[] {'0', '0', '0', '1', '0', '0'};
+        jumpingOnClouds(c);
+    }
+    // Complete the jumpingOnClouds function below.
+    static int jumpingOnClouds(char[] c)
+    {
+        int jumps = 0;
+        int currentStep = 0;
+        System.out.println("Current Step: " + currentStep + "\t"+"Jumps: "+jumps);
+        while (currentStep < c.length-1)
+        {
+            //test comment
+            if (c.length-currentStep!=1 && c[currentStep + 2] == '0')
+            {
+                currentStep += 2;
+                jumps++;
+            }
+            else
+            {
+                currentStep += 1;
+                jumps++;
+            }
+            System.out.println("Current Step: " + currentStep + "\t"+"Jumps: "+jumps);
+        }
+        System.out.println("final: " + jumps);
+        return jumps;
     }
 
 }
