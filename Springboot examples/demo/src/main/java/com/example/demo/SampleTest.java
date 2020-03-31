@@ -195,12 +195,6 @@ public class SampleTest
         return arr;
     }
 
-    public static void main(String args[])
-    {
-        //int[] cuts = new int[0];
-        List<Integer> sss = new ArrayList<>();
-        nonDivisibleSubset(1, sss);
-    }
 
     public static int nonDivisibleSubset(int k, List<Integer> s)
     {
@@ -227,5 +221,68 @@ public class SampleTest
         return numSet.size();
     }
 
+    public static void main(String args[])
+    {
+        int[] cuts = new int[0];
+        //List<Integer> sss = new ArrayList<>();
+        nonDivisibleSubset(1, cuts);
+    }
+
+    static int nonDivisibleSubset(int k, int[] Sa)
+    {
+        // **** declare and populate array of remainders ****
+        k = 3;
+        //int[] S = new int[] {1, 7, 2, 4};
+        List<Integer> S = new ArrayList<>(Arrays.asList(1, 7, 2, 4));
+        int[] remainderArr = new int[k];
+
+        for (int n : S)
+        {
+            System.out.println("n % k (" + n + " % " + k + "): " + n % k);
+            remainderArr[n % k]++;
+        }
+
+        // ???? ????
+        System.out.print("remainderArr: ");
+        for (int s : remainderArr)
+            System.out.print(s + " ");
+        System.out.println("\n");
+
+        // **** set initial number of elements in the subset ****
+        int zeroRemainder = remainderArr[0];
+
+        // ???? ????
+        System.out.println("        zeroRemainder: " + zeroRemainder);
+
+        // **** consider only one of the numbers ****
+        int numOfElementsInSubset = (zeroRemainder > 0) ? 1 : 0;
+
+        // ???? ????
+        System.out.println("numOfElementsInSubset: " + numOfElementsInSubset + "\n");
+
+        // **** ****
+        for (int i = 1; i <= (k / 2); i++)
+        {
+
+            // ???? ????
+            System.out.println("i: " + i + " k - i: " + (k - i));
+
+            // **** ****
+            if (i != k - i)
+            {
+                numOfElementsInSubset += Math.max(remainderArr[i], remainderArr[k - i]);
+            }
+            else
+            {
+                numOfElementsInSubset++;
+            }
+
+            // ???? ????
+            System.out.println("numOfElementsInSubset: " + numOfElementsInSubset);
+        }
+
+        // **** return the number of elements in the subset ****
+        return numOfElementsInSubset;
+    }
 
 }
