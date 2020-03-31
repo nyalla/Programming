@@ -407,7 +407,7 @@ Two different numbers n1 and n2 are divisible by k if and only if:
             jumps++;
         }
 
-        jumps++;//This is the last jump that will be either a 1 or 2
+        jumps++;//This is the last jump that will be either a 1 or 2 comment
 
         return jumps;
     }
