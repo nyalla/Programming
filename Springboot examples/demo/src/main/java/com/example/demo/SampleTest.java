@@ -221,19 +221,36 @@ public class SampleTest
         return numSet.size();
     }
 
-    public static void main(String args[])
-    {
-        int[] cuts = new int[0];
-        //List<Integer> sss = new ArrayList<>();
-        nonDivisibleSubset(1, cuts);
-    }
+/*
+Two different numbers n1 and n2 are divisible by k if and only if:
+        (n1 % k) + (n2 % k) = k
+    We can verify this using some examples:
+    n1 = 10, n2 = 12, k = 3
+    The sum of these numbers is not divisible:
+        10 % 3 + 12 % 3 = 1 (NOT equal to k = 3)
+    Similarly,
+    n1 = 10, n2 = 11, k = 3
+    The sum of these numbers is divisible:
+        10 % 3 + 11 % 3 = 3 (EQUAL to k = 3)
+    There are some special conditions to note such as:
+        1. Remainders for some numbers are 0
+        2. Remainders for some numbers are equal to k / 2 (only applicable for even values of k)
+    In both the above cases, we will consider only one of the numbers falling into one of above conditions to avoid counting both.
+
+    We can solve this problem by computing modulo of array numbers with K.
+    if sum of two numbers is divisible by K, then if one of them gives remainder i, other will give remainder (K – i).
+    First we store frequencies of numbers giving specific remainder in a frequency array of size K.
+    Then we loop for all remainders i and include max(f[i], f[K – i]).
+    Why? a subset with no pair sum divisible by K must include either elements with remainder f[i] or with remainder f[K – i].
+    Since we want to maximize the size of subset, we pick maximum of two sizes.
+    */
 
     static int nonDivisibleSubset(int k, int[] Sa)
     {
         // **** declare and populate array of remainders ****
-        k = 3;
+        k = 7;
         //int[] S = new int[] {1, 7, 2, 4};
-        List<Integer> S = new ArrayList<>(Arrays.asList(1, 7, 2, 4));
+        List<Integer> S = new ArrayList<>(Arrays.asList(278, 576, 496, 727, 410, 124, 338, 149, 209, 702, 282, 718, 771, 575, 436));
         int[] remainderArr = new int[k];
 
         for (int n : S)
@@ -283,6 +300,84 @@ public class SampleTest
 
         // **** return the number of elements in the subset ****
         return numOfElementsInSubset;
+    }
+
+
+    public static void main(String args[])
+    {
+        int[] cuts = new int[0];
+        //List<Integer> sss = new ArrayList<>();
+        repeatedString("", 1);
+    }
+
+
+    // Complete the repeatedString function below.
+    static long repeatedString(String s, long n)
+    {
+
+       /* s = "a";
+        n = 100000;
+        String holder = "";
+        int countA = 0;
+        //char[] charA = s.toCharArray();
+        if (s.length() == 1 && s.equals("a"))
+            return n;
+        System.out.println("Before " + holder.length());
+        while (holder.length() < n)
+        {
+            holder = holder + s;
+        }
+        System.out.println("After " + holder.length());
+        //long endIndex=holder.length()-n;
+        holder = holder.substring(0, (int) n);
+
+        System.out.println("After sub string " + holder.length());
+
+        for (int i = 0; i < holder.length(); i++)
+        {
+            if (holder.charAt(i) == 'a')
+                countA++;
+        }
+        System.out.println(countA);
+        return countA;*/
+
+        long countForSubstring = 0;
+        long totalCount = 0;
+        //Determines how many a's are in a substring
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s.charAt(i) == 'a')
+            {
+                countForSubstring++;
+            }
+        }
+
+
+        //Determines how many complete substrings we will analyze
+        long divisor = n / s.length();
+
+        totalCount += divisor * countForSubstring;
+
+
+        //Determines how many characters in we will analyze towards the end of our n range
+        long remainder = n % s.length();
+
+        for (int i = 0; i < remainder; i++)
+        {
+            if (s.charAt(i) == 'a')
+            {
+                totalCount++;
+            }
+        }
+        return totalCount;
+
+    }
+
+    // Complete the jumpingOnClouds function below.
+    static int jumpingOnClouds(int[] c)
+    {
+
+        return 1;
     }
 
 }
