@@ -375,9 +375,12 @@ Two different numbers n1 and n2 are divisible by k if and only if:
     // Complete the jumpingOnClouds function below.
     static int jumpingOnClouds(char[] c)
     {
-        int jumps = 0;
+        /*int jumps = 0;
         int currentStep = 0;
         System.out.println("Current Step: " + currentStep + "\t"+"Jumps: "+jumps);
+        int cnt=0;
+
+
         while (currentStep < c.length-1)
         {
             //test comment
@@ -394,6 +397,18 @@ Two different numbers n1 and n2 are divisible by k if and only if:
             System.out.println("Current Step: " + currentStep + "\t"+"Jumps: "+jumps);
         }
         System.out.println("final: " + jumps);
+        return jumps;*/
+        int jumps = 0;
+
+        int i = 0;
+        while(i < c.length-3) //goes through all clouds up until the last jump
+        {
+            i += (c[i+2] == 0) ? 2 : 1;
+            jumps++;
+        }
+
+        jumps++;//This is the last jump that will be either a 1 or 2
+
         return jumps;
     }
 
