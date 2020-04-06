@@ -1,10 +1,17 @@
 package com.example.demo;
 
+import java.lang.reflect.Array;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 
 public class SampleTest
 {
+    private static Long aaa;
+
     // Complete the birthdayCakeCandles function below.
     //Get ax element from the array and check how many times it repeated in the same array:
     static int birthdayCakeCandles(int[] ar)
@@ -364,14 +371,7 @@ Two different numbers n1 and n2 are divisible by k if and only if:
 
     }
 
-    public static void main(String args[])
-    {
-        int[] cuts = new int[0];
-        //List<Integer> sss = new ArrayList<>();
-        //char[] c = new char[] {'0', '0', '1', '0', '0', '1', '0'};
-        char[] c = new char[] {'0', '0', '0', '1', '0', '0'};
-        jumpingOnClouds(c);
-    }
+
     // Complete the jumpingOnClouds function below.
     static int jumpingOnClouds(char[] c)
     {
@@ -401,15 +401,44 @@ Two different numbers n1 and n2 are divisible by k if and only if:
         int jumps = 0;
 
         int i = 0;
-        while(i < c.length-3) //goes through all clouds up until the last jump
+        while (i < c.length - 3) //goes through all clouds up until the last jump
         {
-            i += (c[i+2] == 0) ? 2 : 1;
+            i += (c[i + 2] == 0) ? 2 : 1;
             jumps++;
         }
 
         jumps++;//This is the last jump that will be either a 1 or 2 comment
 
         return jumps;
+    }
+
+    public static void main(String args[])
+    {
+        int[] cuts = new int[0];
+        //List<Integer> sss = new ArrayList<>();
+        //char[] c = new char[] {'0', '0', '1', '0', '0', '1', '0'};
+        int[] c = new int[]{1, 3, 4, 3, 4, 3, 2, 3, 3, 3, 3, 3};
+
+        equalizeArray(c);
+    }
+
+    // Complete the equalizeArray function below.
+    static int equalizeArray(int[] arr)
+    {
+
+        Arrays.stream(arr).boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .ifPresent(i -> getVal(Long.valueOf(i.getValue())));
+
+        return (int) (arr.length - aaa);
+    }
+
+    public static void getVal(Long aa)
+    {
+        aaa = aa;
     }
 
 }

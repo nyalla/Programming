@@ -12,7 +12,7 @@ public class HomeController {
 
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public String viewHome(){
-        return "home";
+        return "home1";
     }
 
 }
