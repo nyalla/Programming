@@ -441,4 +441,20 @@ Two different numbers n1 and n2 are divisible by k if and only if:
         aaa = aa;
     }
 
+    // Complete the queensAttack function below.
+    static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles)
+    {
+            /*
+                    1   1   1   x
+                    0   0   1   1
+                    0   1   0   1
+                    1   0   0   1
+                            */
+        int[][] board = new int[n][n];
+        int[][] totalCells = new int[2][n*n];
+        board[r_q][c_q]=1;
+        return 1;
+
+    }
+
 }
