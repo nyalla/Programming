@@ -412,15 +412,6 @@ Two different numbers n1 and n2 are divisible by k if and only if:
         return jumps;
     }
 
-    public static void main(String args[])
-    {
-        int[] cuts = new int[0];
-        //List<Integer> sss = new ArrayList<>();
-        //char[] c = new char[] {'0', '0', '1', '0', '0', '1', '0'};
-        int[] c = new int[]{1, 3, 4, 3, 4, 3, 2, 3, 3, 3, 3, 3};
-
-        equalizeArray(c);
-    }
 
     // Complete the equalizeArray function below.
     static int equalizeArray(int[] arr)
@@ -441,18 +432,89 @@ Two different numbers n1 and n2 are divisible by k if and only if:
         aaa = aa;
     }
 
+
+
+    /*
+        There are a number of people who will be attending ACM-ICPC World Finals. Each of them may be well versed in a number of topics. Given a list of topics known by each attendee, you must determine the maximum number of topics a 2-person team can know. Also find out how many ways a team can be formed to know that many topics. Lists will be in the form of bit strings, where each string represents an attendee and each position in that string represents a field of knowledge, 1 if its a known field or 0 if not.
+
+    For example, given three attendees' data as follows:
+
+    10101
+    11110
+    00010
+    These are all possible teams that can be formed:
+
+    Members Subjects
+    (1,2)   [1,2,3,4,5]
+    (1,3)   [1,3,4,5]
+    (2,3)   [1,2,3,4]
+                */
+    static int[] acmTeam(String[] topic)
+    {
+
+        int size = topic.length;
+        int maxTopics = 0;
+        int maxTeams = 0;
+        int noOfDigits = topic[0].length();
+        Map<Integer, Integer> holder = new HashMap<>();
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = i + 1; j < size; j++)
+            {
+                int same = 0;
+                for (int k = 0; k < noOfDigits; k++)
+                {
+                    if (topic[i].charAt(k) == '1' || topic[j].charAt(k) == '1')
+                    {
+                        same++;
+                    }
+                    /*if (holder.containsKey(same))
+                        holder.put(same,holder.get(same)+1);
+                    else
+                        holder.put(same,1);*/
+                }
+                if (same >= maxTopics)
+                {
+                    maxTeams = same == maxTopics ? maxTeams + 1 : 1;
+                    maxTopics = same;
+
+                }
+            }
+
+        }
+        int[] c = new int[]{maxTopics, maxTeams};
+
+        return c;
+    }
+
+
+    public static void main(String args[])
+    {
+        //int[] cuts = new int[0];
+        //List<Integer> sss = new ArrayList<>();
+        //char[] c = new char[] {'0', '0', '1', '0', '0', '1', '0'};
+        //int[] c = new int[]{1, 3, 4, 3, 4, 3, 2, 3, 3, 3, 3, 3};
+        //acmTeam(new String[]{"10101", "11100", "11010", "00101"});
+    }
     // Complete the queensAttack function below.
     static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles)
     {
             /*
-                    1   1   1   x
-                    0   0   1   1
-                    0   1   0   1
-                    1   0   0   1
+                    0   0   0   x
+                    0   0   0   0
+                    0   0   0   0
+                    0   0   0   0
                             */
         int[][] board = new int[n][n];
-        int[][] totalCells = new int[2][n*n];
-        board[r_q][c_q]=1;
+        int[][] totalCells = new int[2][n * n];
+        board[r_q][c_q] = 1;
+        int count = 0;
+        //count rows
+        count = count + n - 1;
+        //count columns
+        count = count + n - 1;
+
+
         return 1;
 
     }
