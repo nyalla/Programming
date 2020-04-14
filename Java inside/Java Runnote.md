@@ -4,7 +4,7 @@
 
 
 ###Greatest algorithms:
-```
+```java
  public static void main(String args[]){
         int base=14235478;
         int[] holder= new int[Integer.toString(base).length()];
