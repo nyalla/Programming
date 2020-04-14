@@ -30,6 +30,14 @@
     }
 ```
 
+```java
+ Arrays.stream(arr).boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .ifPresent(i -> getVal(Long.valueOf(i.getValue())));
+```
 comment from github
 
 
