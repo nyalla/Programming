@@ -30,11 +30,7 @@
     }
 ```
 
-s is from sublime adsadsa
-
-direct push
-
-
+comment from github
 
 
 
