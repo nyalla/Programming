@@ -3,7 +3,7 @@
 **Includes all theory with examples** 
 
 
-###### **Greatest algorithms**:
+## **Greatest algorithms**:
 
 ```java
  public static void main(String args[]){
@@ -53,9 +53,10 @@ Using multiple classes with same name
 Wildcard imports 
 COde formatting on exam
 
-###### static imports : import static Maths.max;
+## static imports 
+  : import static Maths.max;
 
-###### String literals:
+## String literals:
 We can mention L or l after number to tell that is long data type.
 long max=1223; // error throws 
 long max=1234L; //Compiles
@@ -75,7 +76,7 @@ char uniChar='\u03A9';  //uppercase greek omega character
 
 
 
-###### Octal (0-7) Only accespts digits from 0 to 7
+## Octal (0-7) Only accespts digits from 0 to 7
 
 int oct=07;
 int firstOct=010;   //8 in decimal
@@ -84,7 +85,7 @@ int secondOct=022;  // 10 in decimal
 int sumOct = firstOct + secondOct;  //26 in decimal, 32 octal
     Output of sumOct will be decimal, to convert to octa decimal, Integer.toOctalString(sumOctal)
 
-###### Hexa decimal (0-9 and A-F)
+## Hexa decimal (0-9 and A-F)
 
 int firstHex=0xF;   //15 decimal
 int secondHex = 0x1E;   //30 decimal
@@ -92,7 +93,7 @@ int secondHex = 0x1E;   //30 decimal
 int sumHex= firstHex + secondHex;   //45 decima,2d Hex
     Output of sumHex will be decimal, to convert to Hexa decimal, Integer.toHexString(sumHex)
 
-###### Binary (1 or 0)
+## Binary (1 or 0)
 int firstBin=0b1001;    //9 decimal
 int secondBin=0b0111;   //7 decimal
 
@@ -101,7 +102,7 @@ int sumBin= firstBin+secondBin; // 16 decimal, 10000 binary
 
 
 
-###### Default intilization
+## Default intilization
 
 For lcoal primitive variables are not initialized, there will be error saying variable is not initilizaed when using. 
 
@@ -133,12 +134,12 @@ Class ClassName{
 } 
 ```
 
-###### Variable scopes
+## Variable scopes
     Global variables
     local variables
 
 
-###### Elements class
+## Elements class
 
     Package
     import
@@ -149,7 +150,7 @@ Class ClassName{
 **Only one public class inside one java file**
 
 
-###### Understanding NULL
+## Understanding NULL
 
 ```java
 Class ClassName{
@@ -178,7 +179,7 @@ Class ClassName{
 
 ```
 
-###### Primitive Wrapper Types
+## Primitive Wrapper Types
 
 Wrapper are objects of primitive types
 int value =10;
@@ -192,7 +193,7 @@ Boxing      :    convert int to Integer // primitive to Wrapper//   Integer valu
 
 
 
-###### Java Benefits
+## Java Benefits
     Object Oriented
     Encapsulation
     Platform Independent
@@ -201,7 +202,7 @@ Boxing      :    convert int to Integer // primitive to Wrapper//   Integer valu
     Secure
 
 
-###### QuestionAndAnswers:
+## QuestionAndAnswers:
 
 
 
