@@ -40,8 +40,17 @@
 ```
 comment from github
 
+Classes
+    fields/variable         :states
+    methods/functions       :operations 
+
+Packages and imports:
 
 
+Naming conflicts
+Using multiple classes with same name
+Wildcard imports 
+COde formatting on exam
 
 
 
