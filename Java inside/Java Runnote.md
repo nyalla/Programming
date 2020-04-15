@@ -3,7 +3,7 @@
 **Includes all theory with examples** 
 
 
-##Greatest algorithms:
+#Greatest algorithms:
 ```java
  public static void main(String args[]){
         int base=14235478;
