@@ -1,11 +1,9 @@
 package com.example.demo;
 
-import java.lang.reflect.Array;
 import java.util.*;
-
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
 
 
 public class SampleTest
@@ -433,7 +431,6 @@ Two different numbers n1 and n2 are divisible by k if and only if:
     }
 
 
-
     /*
         There are a number of people who will be attending ACM-ICPC World Finals. Each of them may be well versed in a number of topics. Given a list of topics known by each attendee, you must determine the maximum number of topics a 2-person team can know. Also find out how many ways a team can be formed to know that many topics. Lists will be in the form of bit strings, where each string represents an attendee and each position in that string represents a field of knowledge, 1 if its a known field or 0 if not.
 
@@ -487,15 +484,19 @@ Two different numbers n1 and n2 are divisible by k if and only if:
         return c;
     }
 
+    private String check ="aaa";
 
     public static void main(String args[])
     {
+        SampleTest s = new SampleTest();
+        String aaa=             s.check;
         //int[] cuts = new int[0];
         //List<Integer> sss = new ArrayList<>();
         //char[] c = new char[] {'0', '0', '1', '0', '0', '1', '0'};
         //int[] c = new int[]{1, 3, 4, 3, 4, 3, 2, 3, 3, 3, 3, 3};
         //acmTeam(new String[]{"10101", "11100", "11010", "00101"});
     }
+
     // Complete the queensAttack function below.
     static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles)
     {
@@ -513,9 +514,22 @@ Two different numbers n1 and n2 are divisible by k if and only if:
         count = count + n - 1;
         //count columns
         count = count + n - 1;
+        int i = 0;
+        while (r_q != i && i !=c_q)
+        {
 
+        }
 
         return 1;
+
+    }
+
+
+    public static void main1(String[] args)
+    {
+        // Strin
+        double myDouble = 22312312312312.5421321322421432;
+        double myDouble2 = 22431242423423242.5243324214214F;
 
     }
 

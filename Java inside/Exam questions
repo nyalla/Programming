@@ -1,0 +1,136 @@
+# Example Programs 
+
+## Operators
+
+
+public class Sample{
+    public void main(String[] args)
+    {
+        int x=6;
+        Sample s = new Sample();
+        s.doStuff(x);
+        System.out.print("" +x);
+    }
+    void doStuff(int x){
+        System.out.print("x " + x++);
+    }
+}
+
+//Error: Main method is not static in class Sample, please define the main method as:
+//   public static void main(String[] args)
+
+public class Sample{
+    public void main(String[] args)
+    {
+        int x=6;
+        Sample s = new Sample();
+        s.doStuff(x);
+        System.out.print("" +x);
+    }
+    void doStuff(int x){
+        System.out.print("x " + x++);
+    }
+}
+
+// 6   7
+
+
+
+public class Sample{
+    public void main(String[] args)
+    {
+        Short s =15;
+        Boolean b;
+       // b= s instanceof Short;          //Correct
+       // b= s instanceof Number;         //Correct
+        b= Number instanceof s;            //Compile error
+
+    }
+
+}
+
+
+
+public class Sample{
+    public void main(String[] args)
+    {
+       float f1 = 2.3f;
+       float[][] f2 = {{42.0f,{1.7f,2.3f},{2.6f,2.7f}}};
+       float[] f3 = {2.7f};
+       Long x = 42L;
+      //Insert line
+
+           System.out.println("true");
+    }
+
+}
+if(f1==f2)
+if(f1 == f2[2][1])
+if(x==f2[0][0])
+if(f1== f2[1,1])
+    if(f3==f2[2])
+
+    D is correct. Fragments F2, F3, and F5 will compile, and only F3 is true.
+        A, B, C, E, and F are incorrect. F1 is incorrect because you can’t compare a
+        primitive to an array. F4 is incorrect syntax to access an element of a two-dimensional array.
+
+
+public class Sample{
+    public static void main(String[] args)
+    {
+       Boolean b1 = true;
+       boolean b2 =false;
+       boolean b3 = true;
+       if((b1 & b2) | (b2 &b3) &b3)
+           System.out.println("alpha");
+       if((b1 = false) | (b1 & b3) | (b1 | b2))
+           System.out.print("beta");
+    }
+
+}
+    E is correct. In the second if test, the leftmost expression is an assignment, nota comparison. Once b1 has been set to false, the remaining tests are all false.
+        
+
+
+
+public class Sample{
+    public static void main(String[] args)
+    {
+     Long x = 42L;
+     Long y = 44L;
+
+     System.out.print(" " + 7 + 2 + " ");
+        System.out.print(foo() + x + 5 + " ");
+        System.out.print(x+y+foo());
+    }
+    static String foo(){return "foo"};
+
+}
+    72 foo425 86foo
+
+            Concatenation runs from left to right, and if either operand is aString, the operands are concatenated. If both operands are numbers they areadded together. Unboxing works in conjunction with concatenation.
+ 
+
+ 
+public class Sample
+{
+    int x = 5;
+
+    public static void main(String[] args)
+    {
+        final Sample f1 = new Sample();
+        Sample f2 = new Sample();
+        Sample f3 = SampleSwitch(f1, f2);
+        System.out.print((f1 == f3) + " " + (f1.x == f3.x));
+    }
+
+    static Sample SampleSwitch(Sample x, Sample y)
+    {
+        final Sample z = x;
+        z.x = 6;
+        return z;
+    }
+}
+
+true true
+        The references f1, z, and f3 all refer to the same instance of Fizz. Thefinal modifier assures that a reference variable cannot be referred to a differentobject, but final doesn’t keep the object’s state from changing.                  

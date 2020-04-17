@@ -181,9 +181,9 @@ Class ClassName{
 
 ## Primitive Wrapper Types
 
-  Wrapper are objects of primitive types
-  int value =10;
-  Integer value1  = new Integer(10);
+Wrapper are objects of primitive types
+int value =10;
+Integer value1  = new Integer(10);
 
 
 Un-Boxing   :    conveting Integer to int  //  wrapper to primitive // int value1=value2
@@ -208,7 +208,12 @@ Boxing      :    convert int to Integer // primitive to Wrapper//   Integer valu
 
 
 
+## Operators
 
+Mul,div,modulo are operators precedence
+letft to right evaluation
+
+int i
 
 
 
