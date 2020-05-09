@@ -62,3 +62,33 @@ Get largest element from arranging with 5 in between integers
     }
     
     *******    *******    *******    *******    *******    *******    *******    
+
+
+import java.util.*;
+
+ // Compiler version JDK 11.0.2
+
+ class Dcoder
+ {
+   public static void main(String args[])
+    {
+
+    String s = "aa";
+    
+    if(s.isEmpty()){
+      System.out.println("rule 1");
+    }
+    
+    if (!s.isEmpty() && !s.startsWith("a")){
+      System.out.println("rule 2");
+    }
+    
+    if (!s.isEmpty() && !(s.length()==2)){
+      System.out.println("rule 3");
+    }
+    
+    }
+   
+ }
+
+    
