@@ -73,7 +73,7 @@ import java.util.*;
    public static void main(String args[])
     {
 
-    String s = "aa";
+    String s = "a";
     
     if(s.isEmpty()){
       System.out.println("rule 1");
@@ -83,7 +83,9 @@ import java.util.*;
       System.out.println("rule 2");
     }
     
-    if (!s.isEmpty() && !(s.length()==2)){
+    if (!s.isEmpty() 
+      && s.startsWith("a") 
+      && !(s.length()==2)){
       System.out.println("rule 3");
     }
     
