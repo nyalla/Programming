@@ -10,7 +10,7 @@
 
 Properties:
 
-pring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=none
 spring.datasource.url=jdbc:mysql://localhost:3306/base
