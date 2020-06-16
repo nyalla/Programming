@@ -1,6 +1,6 @@
-##Example for Database and spring boot 
+## Example for Database and spring boot 
 
-##Data base:
+# Data base:
 
  Have to add dependency for mysql and Java connectivity
  <dependency>
