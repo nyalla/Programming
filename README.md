@@ -1,5 +1,3 @@
 # Programming
 
-Install node JS server
-install dependencies with npm., npm install <module_name>
-Run pprogram with node file_name.js 
+All the concepts I learn daily are implemented and uploaded into this space. 
