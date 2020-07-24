@@ -71,9 +71,10 @@ https://www.geeksforgeeks.org/calculate-sum-of-all-numbers-present-in-a-string/
         for(int i=0;i<s.length();i++){
             if(Character.isDigit(s.charAt(i))){
                 holder.append(s.charAt(i));
+                 if(i!=s.length()-1)
                 continue;
             }
-            if(holder.length()>0 || i+1 == s.length())
+            if(holder.length()>0)
             {
                 sum=sum+Integer.parseInt(holder.toString());
                 holder.setLength(0);
